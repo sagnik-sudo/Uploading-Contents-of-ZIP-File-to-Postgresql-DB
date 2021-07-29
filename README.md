@@ -14,8 +14,13 @@
 - **Step 4:** Running the App  
 `uvicorn main:app --reload`
 
-- **Step 5:** Open Swagger App of FastAPI  
-`http://127.0.0.1:8000/docs`
+  *Ensure to have database/table in this format, before running or change code in line 36 of main.py*
+  *`postgresql://sagnik:superuser@localhost:5433/data_uploader`*
+
+- **Step 5:** Open Swagger App of FastAPI in any browser
+[Swagger App (Fast API)](http://127.0.0.1:8000/docs)
+
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img8.PNG)
 
 - **Step 6:** Click on Upload Dropdown, then click on  
 `Try it Out`
