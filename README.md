@@ -1,5 +1,7 @@
 # Uploading Contents of ZIP File to Postgresql DB
 
+## *Steps to Run the Uploader Script:*
+
 - **Step 1:** Create Environment  
 `python -m venv ./env`
 
@@ -24,7 +26,7 @@
 
 - **Step 8:** Click *Execute*
 
-![alt text](./img/img2.png)
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img2.PNG)
 
 - **Step 9:** Check if you got Successful Response. Example:  
 `{
@@ -33,4 +35,38 @@
 
 - **Step 10:** You may open your PostgreSQL Server and check the documents saved in byte array format. For example, you can view the files in pgAdmin 4 App.
 
-![alt text](./img/img3.png)
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img3.PNG)
+
+## Note:
+
+### *Creating DataBase in pgAdmin:*
+
+- Create Server in pgAdmin (eg. mylocalserver)
+
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img4.PNG)
+
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img5.PNG)
+
+- Creating Database  
+`CREATE DATABASE data_uploader
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;`
+
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img6.PNG)
+
+- Creating Table  
+`CREATE TABLE IF NOT EXISTS public.document_table
+(
+    unique_id character varying(255) NOT NULL,
+    filename character varying(255) NOT NULL,
+    data bytea,
+    status character varying(255),
+    PRIMARY KEY (unique_id)
+);`
+
+  `ALTER TABLE public.document_table
+    OWNER to postgres;`
+
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img7.PNG)
