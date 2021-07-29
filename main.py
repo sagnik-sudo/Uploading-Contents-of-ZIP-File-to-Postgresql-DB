@@ -33,7 +33,7 @@ def convert_upload_db(): # Converts to Byte Array and Stores File in PostgreDB S
     dataset["status"] = 'Uploaded'
 
     ###Pushing to PostgreSQL
-    engine = create_engine('postgresql://sagnik:superuser@localhost:5433/data_uploader')
+    engine = create_engine('postgresql://sagnik:superuser@localhost:5433/data_uploader') #Selecting Engine, Change as required
     dataset.to_sql('document_table', engine, if_exists='append',index=False)
     print("Upload Complete")
 
