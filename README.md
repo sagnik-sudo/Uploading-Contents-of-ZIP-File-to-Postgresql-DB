@@ -18,8 +18,7 @@
 - **Step 6:** Click on Upload Dropdown, then click on  
 `Try it Out`
 
-![alt text](./img/img1.png)
-
+![alt text](https://github.com/sagnik-sudo/Uploading-Contents-of-ZIP-File-to-Postgresql-DB/blob/main/img/img1.PNG)
 
 - **Step 7:** Click on Choose File and select any zip file which contains multiple documents/image in any format.
 
